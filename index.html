@@ -12,13 +12,14 @@
 </head>
 
 <body>
-  <audio loop id="background-music">
-  <source src="img/hbd.mp3"></source>
-</audio>
+  <div id="music-panel">
+  <button id="play-music">Play Music</button>
+  <audio loop id="background-music" src="img/hbd.mp3"></audio>
+</div>
 <script>
-  document.getElementById('background-music').play();
+  document.getElementById('play-music').play();
   window.addEventListener('load', function () {
-    const music = document.getElementById('background-music');
+    const music = document.getElementById('play-music');
     music.play(); // Start the music as soon as the page loads
   });
 </script>
