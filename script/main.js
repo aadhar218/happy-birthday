@@ -299,6 +299,7 @@ const animationTimeline = () => {
   $('#play').click(function(){
 		var audio = $('.background_music')[0];
         audio.play();
+  };
     
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
