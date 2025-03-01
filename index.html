@@ -12,15 +12,15 @@
 </head>
 
 <body>
-  <button id="play-music">Play Music</button>
+ //<button id="play-music">Play Music</button>
 <audio loop id="background-music" src="img/hbd.mp3"></audio>
 
 <script>
   // JavaScript
-  const playMusicButton = document.getElementById('play-music');
-  playMusicButton.addEventListener('click', () => {
-    const audio = document.querySelector('#background-music');
-    audio.play();
+  // const playMusicButton = document.getElementById('play-music');
+  document.addEventListener('click', () => {
+  const audio = document.querySelector('#background-music');
+  audio.play();
   });
 </script>
   <div class="container">
