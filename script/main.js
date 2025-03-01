@@ -296,6 +296,10 @@ const animationTimeline = () => {
   // tl.timeScale(2);
 
   // Restart Animation on click
+  $('#play').click(function(){
+		var audio = $('.background_music')[0];
+        audio.play();
+    
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
