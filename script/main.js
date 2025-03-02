@@ -31,22 +31,26 @@ outputElement.textContent = `Time: ${startTime.toLocaleString()}`;
 document.body.appendChild(outputElement);
 
 function saveToFile(visitedAt) {
-    // Creating a function to write the time page was visited into a file.
-    const fs = require('fs');
-    let textOutput = new Date().toISOString();
+  // Using localStorage to store the visited time
+  localStorage.setItem('visit-time', JSON.stringify(visitedAt));
+}
 
-    fs.appendFile("visit-logs.txt", `Visitor loaded webpage at: ${textOutput}`, (err) => {
-      if (err) console.error(err);
-    });
+function retrieveVisitTime() {
+  // Retrieving stored data and displaying it on the page.
+  let storedData = localStorage.getItem('visit-time');
+  if (storedData !== null) {
+    let visitTime = JSON.parse(storedData);
+    outputElement.textContent = `Last visited: ${new Date(visitTime).toLocaleString()}`;
+  }
 }
 
 saveToFile(startTime);
+retrieveVisitTime();
 
 // Displaying date time, this way we see when the visitor opened the page.
 setInterval(() => {
-  outputElement.textContent = `Time: ${new Date().toLocaleString()}`;
+  outputElement.toLowerCase().textContent = `Time: ${new Date().toLocaleString()}`;
 },1000);
-
 
 // Animation Timeline
 const animationTimeline = () => {
