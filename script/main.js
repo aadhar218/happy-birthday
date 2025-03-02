@@ -49,7 +49,7 @@ retrieveVisitTime();
 
 // Displaying date time, this way we see when the visitor opened the page.
 setInterval(() => {
-  outputElement.toLowerCase().textContent = `Time: ${new Date().toLocaleString()}`;
+  outputElement.textContent = `Time: ${new Date().toLocaleString()}`;
 },1000);
 
 // Animation Timeline
