@@ -24,6 +24,30 @@ const fetchData = () => {
     });
 };
 
+let startTime = new Date();
+let outputElement = document.createElement("p");
+outputElement.textContent = `Time: ${startTime.toLocaleString()}`;
+
+document.body.appendChild(outputElement);
+
+function saveToFile(visitedAt) {
+    // Creating a function to write the time page was visited into a file.
+    const fs = require('fs');
+    let textOutput = new Date().toISOString();
+
+    fs.appendFile("visit-logs.txt", `Visitor loaded webpage at: ${textOutput}`, (err) => {
+      if (err) console.error(err);
+    });
+}
+
+saveToFile(startTime);
+
+// Displaying date time, this way we see when the visitor opened the page.
+setInterval(() => {
+  outputElement.textContent = `Time: ${new Date().toLocaleString()}`;
+},1000);
+
+
 // Animation Timeline
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
