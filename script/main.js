@@ -44,24 +44,6 @@ function retrieveVisitTime() {
   }
 }
 
-window.onload = function() {
-// Check if a 'visitCount' exists in localStorage
-let visitCount = localStorage.getItem('visitCount');
-
-// If not, initialize it to 0
-if (!visitCount) {
-visitCount = 0;
-}
-
-// Increment the visit count
-visitCount++;
-
-// Update the visit count in localStorage
-localStorage.setItem('visitCount', visitCount);
-
-// Display the updated visit count in the HTML
-document.getElementById('visitCount').innerText = visitCount;
-};
 
 saveToFile(startTime);
 retrieveVisitTime();
